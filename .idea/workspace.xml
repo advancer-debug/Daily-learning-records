@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe15f14a-5ad2-4723-96f9-03d595a7a0aa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/数据结构与算法记录练习" beforeDir="false" />
+    <list default="true" id="fe15f14a-5ad2-4723-96f9-03d595a7a0aa" name="Default Changelist" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,20 +11,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/日常使用过的工具.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="322">
-                <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,8 +31,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="350" />
-    <option name="y" value="140" />
+    <option name="x" value="414" />
+    <option name="y" value="137" />
     <option name="width" value="1354" />
     <option name="height" value="910" />
   </component>
@@ -67,6 +61,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -95,26 +90,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602676133019</updated>
-      <workItem from="1602676134400" duration="2418000" />
+      <workItem from="1602676134400" duration="4014000" />
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1602679664086</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602679664086</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2418000" />
+    <option name="totallyTimeSpent" value="4014000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="347" y="141" width="1354" height="910" extended-state="0" />
-    <editor active="true" />
+    <frame x="414" y="137" width="1354" height="910" extended-state="0" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33846155" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33846155" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
       <window_info anchor="bottom" id="Regex Tester" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3292683" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -133,6 +135,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/LICENSE">
