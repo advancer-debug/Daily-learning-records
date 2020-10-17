@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fe15f14a-5ad2-4723-96f9-03d595a7a0aa" name="Default Changelist" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pytho的魔法使用/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python的魔法使用/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/日常使用过的工具.md" beforeDir="false" afterPath="$PROJECT_DIR$/日常使用过的工具.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux相关知识(ubuntu及centos)/系统命令.md" beforeDir="false" afterPath="$PROJECT_DIR$/linux相关知识(ubuntu及centos)/系统命令.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +29,8 @@
         <entry file="file://$PROJECT_DIR$/linux相关知识(ubuntu及centos)/系统命令.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="820">
-                <caret line="265" column="40" selection-start-line="265" selection-start-column="40" selection-end-line="265" selection-end-column="40" />
+              <first_editor relative-caret-position="498">
+                <caret line="372" column="2" selection-start-line="372" selection-start-column="2" selection-end-line="372" selection-end-column="2" />
               </first_editor>
               <second_editor />
             </state>
@@ -59,8 +58,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="851" />
-    <option name="y" value="27" />
+    <option name="x" value="51" />
+    <option name="y" value="40" />
     <option name="width" value="1069" />
     <option name="height" value="1040" />
   </component>
@@ -76,11 +75,6 @@
             <path>
               <item name="Daily-learning-records" type="b2602c69:ProjectViewProjectNode" />
               <item name="Daily-learning-records" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Daily-learning-records" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Daily-learning-records" type="462c0819:PsiDirectoryNode" />
-              <item name="linux相关知识(ubuntu及centos)" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -126,7 +120,11 @@
       <workItem from="1602676134400" duration="6594000" />
       <workItem from="1602836712499" duration="1733000" />
       <workItem from="1602842230806" duration="2174000" />
-      <workItem from="1602898910683" duration="615000" />
+      <workItem from="1602898910683" duration="1947000" />
+      <workItem from="1602916007732" duration="1173000" />
+      <workItem from="1602917446009" duration="266000" />
+      <workItem from="1602918475150" duration="350000" />
+      <workItem from="1602919174342" duration="791000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1602679664086</created>
@@ -139,7 +137,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11116000" />
+    <option name="totallyTimeSpent" value="15028000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -151,10 +149,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="851" y="27" width="1069" height="1040" extended-state="0" />
+    <frame x="51" y="40" width="1069" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20295566" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2226601" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -170,7 +168,7 @@
       <window_info anchor="bottom" id="Regex Tester" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.328341" />
+      <window_info anchor="bottom" id="Terminal" order="13" weight="0.66820276" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -203,8 +201,8 @@
     <entry file="file://$PROJECT_DIR$/linux相关知识(ubuntu及centos)/系统命令.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="820">
-            <caret line="265" column="40" selection-start-line="265" selection-start-column="40" selection-end-line="265" selection-end-column="40" />
+          <first_editor relative-caret-position="498">
+            <caret line="372" column="2" selection-start-line="372" selection-start-column="2" selection-end-line="372" selection-end-column="2" />
           </first_editor>
           <second_editor />
         </state>
