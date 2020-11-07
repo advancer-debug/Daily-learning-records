@@ -1,7 +1,9 @@
+[TOC]
+
 ### pycharm相关操作的记录学习
 
 **pycharm高频率使用的快捷键**
-
+```
 Ctrl+Shift+F10 运行当前的页面
 
 Ctrl + / 注释(取消注释)选择的行
@@ -25,7 +27,7 @@ Backspace 删除到字符的开始
 Ctrl + NumPad+/- 展开或者收缩代码块
 
 Ctrl + Shift + NumPad+ 展开所有的代码块
-
+```
 
 **pycharm中所有快捷键和常用设置**
 
@@ -35,7 +37,7 @@ PyCharm Default Keymap
 **1.PyCharm3.0默认快捷键**
 
 **1、编辑（Editing）**
-
+```
 Ctrl + Space 基本的代码完成（类、方法、属性）
 
 Ctrl + Alt + Space 快速导入任意类
@@ -215,13 +217,15 @@ Ctrl + Shift + F11书签助记开关
 Ctrl + #[0-9]跳转到标识的书签
 
 Shift + F11显示书签
-
+```
 **6、搜索相关(Usage Search)**
+```
 Alt + F7/Ctrl + F7文件中查询用法
 Ctrl + Shift + F7文件中用法高亮显示
 Ctrl + Alt + F7显示用法
-
+```
 **7、重构(Refactoring)**
+```
 F5复制F6剪切
 Alt + Delete安全删除
 Shift + F6重命名
@@ -232,18 +236,21 @@ Ctrl + Alt + V提取属性
 Ctrl + Alt + F提取字段
 Ctrl + Alt + C提取常量
 Ctrl + Alt + P提取参数
-
+```
 **8、控制VCS/Local History**
+```
 Ctrl + K提交项目
 Ctrl + T更新项目
 Alt + Shift + C查看最近的变化
 Alt + BackQuote(’)VCS快速弹出
-
+```
 **9、模版(Live Templates)**
+```
 Ctrl + Alt + J当前行使用模版
 Ctrl +Ｊ插入模版
-
+```
 **10、基本(General)**
+```
 Alt + #[0-9]打开相应的工具窗口
 Ctrl + Alt + Y同步
 Ctrl + Shift + F12最大化编辑开关
@@ -253,7 +260,7 @@ Ctrl + BackQuote(’)快速切换当前计划
 Ctrl + Alt + S　打开设置页
 Ctrl + Shift + A查找编辑器里所有的动作
 Ctrl + Tab在窗口间进行切换
-
+```
  
 
 **一些常用设置**：
