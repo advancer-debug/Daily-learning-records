@@ -191,12 +191,214 @@ session.commit()
 ```
 
 
+#### 使用
+![](https://img2018.cnblogs.com/blog/1699309/201907/1699309-20190725153802749-534006379.png)
 
+- 1.创建自定义类--数据库表 
+   - 数据库结构 id=Column()
 
+  ```
+  from sqlalchemy import create_engine, Column, INT, VARCHAR
+  from sqlalchemy.ext.declarative import declarative_base
+  from sqlalchemy.orm import sessionmaker   
+  # 创建基类，返回一个定制的metaclass 类
+  Base = declarative_base()
+  
+  # 自定义类
+  class Student(Base):
+    # 表名
+      __tablename__ = 'student'
+    # 字段映射
+      id = Column('id', INT, primary_key=True)
+      name = Column('name', VARCHAR)
+      code = Column('code', VARCHAR)
+      sex = Column('sex', VARCHAR)
+ 
+    def to_dict(self):
+        """
+        将查询的结果转化为字典类型
+        Student 对象的内容如下 {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x10174c898>, 'sex': 'nan', 'name': 'ygh', 'code': 'AU', 'school': 'hua'}
+        获取其值剔除 "_sa_instance_state 即可。但不能在self.__dict__上直接删除”_sa_instance_state” 这个值是公用的。
+        :return:
+        """
+        return {k: v for k, v in self.__dict__.items() if k != "_sa_instance_state”}
+  ```
+或者 
+  ```
+  def __repr__(self):
+     """命令运行时，打印对象显示的值调用"""
+     return "<Student(id='%s', name='%s', code='%s',sex='%s')>" %(self.id, self.name, self.code, self.sex)
+  ```
+  ```
+  CREATE TABLE `student` (
+    `id` int(2) NOT NULL AUTO_INCREMENT,
+    `name` char(20) NOT NULL,
+    `code` char(64) NOT NULL,
+    `sex` char(4) NOT NULL,
+    PRIMARY KEY (`id`) USING BTREE
+  ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+  ```
+  - 创建会话连接
+ ```
+ # 创建引擎 , echo=True ,表示需要开启 sql 打印，调试的以后特别好用
+ engine =create_engine("mysql+mysqldb://root:123qwe@192.168.1.254:3306/yinguohai", pool_size=2, max_overflow=0, echo=True
+ # 创建会话对象，用于操作数据库
+ Session = sessionmaker(bind=engine)
+ session = Session()
+ ```
 
+- 2.数据库表操作 all() filter first() like in_ and_ or_ asc() desc() count
+  distinct()
+   ```
+   #查询所有
+   result = session.squery(Student).all()
+   #部分查询
+   result = session.query(Student.id, Student.name).all()
+   #多条件查询，or_,and_
+   result = session.query(Student).filter(or_(Student.name == "Bob", Student.sex != "aa")).first()
+   #模糊查询
+   result = session.query(Student).filter(Student.sex.like('%bo%')).first()
+   范围查询
+   result = session.query(Student).filter(Student.name.in_(["Bob", "Smith"])).all()
+   #排序
+   #result = session.query(Student).order_by(Student.id.desc()).all()
+   result = session.query(Student).order_by(Student.id.asc()).all()
+   #限制，limit ， slice offset
+   result = session.query(Student).limit(2).all()
+   result = session.query(Student).order_by(Student.id.asc()).slice(2, 3).all()
+   #统计
+   result = session.query(Student).count()
+   #去重,distinct()
+   result = session.query(Student.name).distinct(Student.name).all()
+   #联合查询,默认 inner join查询
+   result = session.query(Student.id, Student.code, Student.name, Country.population).join(Country, Student.code == Country.code).all()
+   #单独查询一行，如果存在则返回对象，不存在返回None
+   user_obj = session.query(User).filter(User.id == '222').scalar()
+   ```
+   sql语句 
+   ```
+   
+   ```
+   区别于查询，需要提交事务才能生效 
+   ```
+   #添加,add() , add_all()
+   result = session.add(Student(name="Bob", code="AU", sex="boy"))
+   session.commit()
+   
+   result = session.add_all([
+    Student(name="Smith", code="BM", sex="girl"),
+    Student(name="Hub", code="BU", sex="boy"),
+    Student(name="Hip", code="HK", sex="boy"),
+    ])
+   session.commit()
+   
+   #更新,update()
+   result = session.query(Student).filter(Student.id == 1).update({Student.sex: "dddd”})
+   # 如果想回滚，则使用 session.rollback() 回滚即可
+   session.commit()
+   
+   #不存在则插入，存在则更新,on_duplicate_key_update()
+   insert_smt = insert(Student).values(id=1, name="bb", code="AA", sex="boy").on_duplicate_key_update(sex="aaaaa",code="uuuuu")
+   result = session.execute(insert_smt)
+   session.commit()
+   ```
+   注意事项：
 
+    需要引入 一个特别函数 , insert( ) , 它是mysql包下的。from sqlalchemy.dialects.mysql import insert
+    
+    使用 on_duplicate_key_update( ) 这个函数进行异常处理，别用错了
+    
+    使用execute ， 执行insert( ) 函数创建的 Sql 语句即可
+    
+    最后一定要记得 commit( ) 一下。
 
+- 对用的sql语句
+ 
+  - 查询
+   
+  ```	
+  SELECT
+      student.id AS student_id,
+      student.NAME AS student_name,
+      student.CODE AS student_code,
+      student.sex AS student_sex
+  FROM student
+  
+  #多条件查询
+  FROM student
+  WHERE student.NAME = % s OR student.sex != % s ( 'Bob', 'aa', 1 )
+  
+  #模糊查询
+  FROM student
+  WHERE student.sex LIKE % s LIMIT %s  ('%bo%', 1)
+  
+  #范围查询
+  FROM student
+  WHERE student.NAME IN (% s, % s ) ( 'Bob', 'Smith' )
+  
+  #排序
+  FROM student ORDER BY student.id ASC
+  
+  #限制
+  FROM student LIMIT % s (2,)
+  
+  #统计
+  SELECT count(*) AS count_1
+  FROM
+    ( SELECT student.id AS student_id, student.NAME AS student_name, student.CODE AS student_code, student.sex AS student_sex FROM student ) AS anon_1
+  
+  #去重
+  SELECT DISTINCT
+    student.NAME AS student_name
+  FROM student
+  
+  #联合查询
+  FROM student
+    INNER JOIN a_country ON student.CODE = a_country.CODE
+    
+  #添加
+  BEGIN 
+  INSERT INTO student (name, code, sex) VALUES (%s, %s, %s) ('Smith', 'BM', 'girl')
+  COMMIT
+  
+  #更新
+  BEGIN 
+  UPDATE student SET sex=%s WHERE student.id = %s ('dddd', 1)
+  COMMIT
+  
+  #不存在则插入，存在则更新,on_duplicate_key_update()
+  BEGIN
+  INSERT INTO student ( id, NAME, CODE, sex )
+  VALUES (% s, % s, % s, % s )
+  ON DUPLICATE KEY UPDATE code = %s, sex = %s
+  (1, 'bb', 'AA', 'boy', 'uuuuu', 'aaaaa')
+  COMMIT
+  
+  #算表中所有列数据行记录总数
+  user_count = session.query(func.count('*')).select_from(User).scalar()
+  
+  #单独查询一行，如果存在则返回对象，不存在抛出sqlalchemy.orm.exc.NoResultFound异常
+  user_obj = session.query(User).filter(User.id == 1).one()
+  ``` 
+  `session.new`的案例，主要作用：打印出已增加的数据，但是未提交至数据库的数据
+  
+  `session.dirty`案例，主要作用：打印出已增加到session中，未提交至数据库，但是在这个过程中又被修改的数据，也叫脏读
 
+- 数据库表删除迁移 
+ 
+ # 删除所有表 `Base.metadata.drop_all(engine)`
+
+ # 创建所有表 `Base.metadata.create_all(engine)`
+
+   
+
+参考链接
+
+- <https://blog.csdn.net/chinabestchina/article/details/89816798?utm_medium=distribute.pc_relevant.none-task-blog-title-2&spm=1001.2101.3001.4242>
+- <https://www.osgeo.cn/sqlalchemy/index.html>
+- <https://www.jianshu.com/p/0ad18fdd7eed>
+- <https://www.cnblogs.com/superscfan/p/12256949.html>
+- <https://www.cnblogs.com/yinguohai/p/11243834.html>
 
 
 

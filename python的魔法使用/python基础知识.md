@@ -225,6 +225,14 @@ raise语法格式如下：`raise [Exception [, args [, traceback]]]`
 
 
 
+运行.py文件无法加载包--可能文件名包名相同
+
+1.package里的__init__.py文件，可以为空文件
+
+2.可以设置PYTHONPATH环境变量，来增加python的搜索路径；
+
+3.运行文件名称不要与类库中的package同名。
+
 
 
 
