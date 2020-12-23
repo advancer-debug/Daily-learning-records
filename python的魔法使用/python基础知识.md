@@ -234,6 +234,29 @@ raise语法格式如下：`raise [Exception [, args [, traceback]]]`
 3.运行文件名称不要与类库中的package同名。
 
 
+### 实例可以利用Python的pickle或shelve模块，通过单个步骤储存到磁盘上
+
+```
+import pickle
+object = someclass
+file = open(filename, 'wb')
+picke.dump(object, file)
+
+file = open(filename, 'rb')
+object = pickle.load(file)
+```
+pickle机制把内存中的对象转换成序列化的字节流，可以保存在文件中，也可通过网络发送出去
+
+解除pickle状态则是从字节流转换回同一个内存中的对象，Shelve也类似。但是它会自动把对象pickle生成按键读取的数据库，而此数据库会导出类似于字典的接口
+```
+import shelve
+object = someclass()
+dbase = shelve.open('filename')
+dbase['key'] = object
+
+
+```
+
 
 
 
