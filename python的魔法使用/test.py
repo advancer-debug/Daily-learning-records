@@ -1,9 +1,6 @@
 # -*- coding = utf-8 -*-
 # /usr/bin/env python
 
-# @Time    : 20-11-18 下午8:25
-# @File    : test.py
-# @Software: PyCharm
 # try/except/else       while/else  break  continue
 # while True:
 #     reply = input('Enter txt:')
